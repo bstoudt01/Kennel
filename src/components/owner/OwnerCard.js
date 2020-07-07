@@ -7,7 +7,7 @@ const OwnerCard = () => {
         <h3>
           Owner Name: <span className="card-petname">Yankee McDoodles</span>
         </h3>
-        <p>Reason for Adopting: Wants to become a Professional Poop Wrangler!</p>
+        <p>Reason for Choosing Brett's Kennels: Wants Doodles to learn how to pickup his own poop!</p>
       </div>
     </div>
   );
