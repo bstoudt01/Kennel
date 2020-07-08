@@ -1,5 +1,5 @@
 import React from "react";
-
+// owners link displaying owner information
 const OwnerCard = () => {
   return (
     <div className="card">

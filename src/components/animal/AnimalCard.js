@@ -1,8 +1,9 @@
 import React from "react";
 
+//2nd component created (owner, employee, location componentes also created in this step)
 const AnimalCard = () => {
   return (
-    <div className="card">
+    <div className="container-cards">
       <div className="card-content">
         <picture>
           <img src={require("./dog.svg")} alt="My Dog" />
