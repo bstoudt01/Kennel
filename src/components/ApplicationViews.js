@@ -1,13 +1,14 @@
 import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
-import AnimalCard from "./animal/AnimalCard";
+import AnimalList from "./animal/AnimalList";
 //only include these once they are built - previous practice exercise
 import LocationCard from "./location/LocationCard";
 import EmployeeCard from "./employee/EmployeeCard";
-import OwnerCard from "./owner/OwnerCard";
+import OwnerList from "./owner/OwnerList";
 
 // 3rd/4th componet created along with NavBar
+//renders routes based on the URL.
 //UI based on the route path was chosen by the user, imported into Kennel.js
 const ApplicationViews = () => {
   return (
@@ -22,7 +23,7 @@ const ApplicationViews = () => {
       <Route
         path="/animals"
         render={props => {
-          return <AnimalCard />;
+          return <AnimalList />;
         }}
       />
       <Route
@@ -40,7 +41,7 @@ const ApplicationViews = () => {
       <Route
         path="/Owners"
         render={props => {
-          return <OwnerCard />;
+          return <OwnerList />;
         }}
       />
     </React.Fragment>

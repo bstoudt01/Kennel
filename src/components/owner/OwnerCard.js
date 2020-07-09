@@ -1,13 +1,13 @@
 import React from "react";
 // owners link displaying owner information
-const OwnerCard = () => {
+const OwnerCard = (props) => {
   return (
     <div className="card">
       <div className="card-content">
         <h3>
-          Owner Name: <span className="card-petname">Yankee McDoodles</span>
+          Owner Name: <span className="card-petname">{props.owner.name}</span>
         </h3>
-        <p>Reason for Choosing Brett's Kennels: Wants Doodles to learn how to pickup his own poop!</p>
+        <p>contact number: {props.owner.phoneNumber}</p>
       </div>
     </div>
   );

@@ -1,0 +1,25 @@
+{
+    "animals": [
+        { "id": 1, "name": "Doodles", "breed": "Poodle", "employeeId": "5", "ownerId": "3"},
+        { "id": 2, "name": "Decker", "breed": "German Shepherd", "employeeId": "2", "ownerId": "3" },
+        { "id": 3, "name": "Esme", "breed": "Pitbull", "employeeId": "1", "ownerId": "2" },
+        { "id": 3, "name": "Yoda", "breed": "Yorkie / Shitzu", "employeeId": "4", "ownerId": "1"}
+    ],
+    "employees": [
+        { "id": 1, "name": "Brett", "role":"Veterinarian" },
+        { "id": 2, "name": "Allie", "role":"Poop Picker Upper" },
+        { "id": 3, "name": "Jose", "role":"Backup Poop Picker Upper / Blunt Man" },
+        { "id": 4, "name": "Michale", "role":"Dog Whisperer" },
+        { "id": 5, "name": "Ashley", "role":"{Psychiatrist}" }
+
+    ],
+    "locations": [
+        { "id": 1, "name": "Franklin"},
+        { "id": 2, "name": "Dowtown Nashville"}
+    ],
+    "owners": [
+        { "id": 1, "name": "Bob", "phoneNumber":"555-323-3811" },
+        { "id": 2, "name": "Jim", "phoneNumber":"555-111-2202" },
+        { "id": 3, "name": "Louis", "phoneNumber":"555-222-3303" }
+    ]
+}
