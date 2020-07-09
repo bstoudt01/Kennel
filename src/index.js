@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Kennel from "./components/Kennel";
-
+// inokes the "router" and imports data from Kennel.js and display that to the DOM
 ReactDOM.render(
-  <React.StrictMode>
+  <Router>
     <Kennel />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </Router>,
+  document.getElementById("root")
 );

@@ -1,6 +1,8 @@
 import React from "react";
 
-const EmployeeCard = () => {
+//img src={require...} means {} is used to wrap the source since its local... "require" is used because we are using "webpack" and it is a "commonjs" ... 
+//"require" is a function that is a commonjs ?????????? and actually imports modules or other dependant files in the directory (sich as photos)
+const EmployeeCard = (props) => {
   return (
     <div className="card">
       <div className="card-content">
@@ -10,9 +12,9 @@ const EmployeeCard = () => {
                 </picture>
             </div>
             <h2>
-                Brett's Kennels
+               {props.employee.name}
                 <br />
-                <small>Loving care when you're not there.</small>
+                <small>{props.employee.role}</small>
             </h2>
       </div>
     </div>
