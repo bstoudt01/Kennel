@@ -3,8 +3,8 @@ import React from "react";
 import Home from "./home/Home";
 import AnimalList from "./animal/AnimalList";
 //only include these once they are built - previous practice exercise
-import LocationCard from "./location/LocationCard";
-import EmployeeCard from "./employee/EmployeeCard";
+import LocationList from "./location/LocationList";
+import EmployeeList from "./employee/EmployeeList";
 import OwnerList from "./owner/OwnerList";
 
 // 3rd/4th componet created along with NavBar
@@ -29,13 +29,13 @@ const ApplicationViews = () => {
       <Route
         path="/locations"
         render={props => {
-          return <LocationCard />;
+          return <LocationList />;
         }}
       />
       <Route
         path="/employees"
         render={props => {
-          return <EmployeeCard />;
+          return <EmployeeList />;
         }}
       />
       <Route

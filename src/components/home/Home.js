@@ -2,11 +2,13 @@ import React from "react";
 // homepage link when the DOM Loads
 const Home = () => {
   return (
-    <address>
-      Visit Us at the Nashville North Location
+    <>
+    <h2>
+      Brett's Kennels
       <br />
-      500 Puppy Way
-    </address>
+      <small>Loving care when you're not there.</small>
+    </h2>
+    </>
   );
 };
 
