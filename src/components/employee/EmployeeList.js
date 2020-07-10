@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import EmployeeCard from './EmployeeCard';
 import EmployeeManager from '../../modules/EmployeeManager';
 
-const EmployeeList = () => {
+const EmployeeList = (props) => {
   //The inital state of "useState" is an empty array that will be given value by the return of the fetch function
   const [employees, setEmployees] = useState([]);
 
@@ -29,9 +29,19 @@ const EmployeeList = () => {
 
 
   return (
-    <div className="container-cards">
-      {employees.map(employee => <EmployeeCard key={employee.id} employee={employee} fireEmployee={fireEmployee}/>)};
-    </div>
+    //add this button above your display of animal cards
+    <>
+      <section className="section-content">
+        <button type="button"
+            className="btn"
+            onClick={() => {props.history.push("/employees/new")}}>
+            New Employee
+        </button>
+      </section>
+      <div className="container-cards">
+        {employees.map(employee => <EmployeeCard key={employee.id} employee={employee} fireEmployee={fireEmployee}/>)};
+      </div>
+    </>
   )
 
 };

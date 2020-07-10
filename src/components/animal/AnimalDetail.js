@@ -3,7 +3,7 @@ import AnimalManager from '../../modules/AnimalManager';
 import './AnimalDetail.css'
 
 const AnimalDetail = props => {
-  const [animal, setAnimal] = useState({ name: "", breed: "", photo: "" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", photo: "./dog.svg" });
   //set state isLoading so we can keep user for performing actions while things are true for isloading.
   const [isLoading, setIsLoading] = useState(true, {photo: ""});
 

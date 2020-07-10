@@ -8,6 +8,9 @@ import EmployeeList from "./employee/EmployeeList";
 import OwnerList from "./owner/OwnerList";
 import AnimalDetail from "./animal/AnimalDetail";
 import LocationDetail from "./location/LocationDetail";
+import AnimalForm from "./animal/AnimalForm";
+import EmployeeForm from "./employee/EmployeeForm";
+
 // 3rd/4th componet created along with NavBar
 //renders routes based on the URL.
 //UI based on the route path was chosen by the user, imported into Kennel.js
@@ -15,15 +18,17 @@ const ApplicationViews = () => {
   return (
     
     <React.Fragment>
-          {/* Make sure you add the `exact` attribute here */}
+          {/* Make sure you add the `exact` attribute here  and pass through ...props so animal list can accept a paramater of props to use later in the code (for adding a new animal) */}
       <Route exact path="/animals" render={(props) => {
-        return <AnimalList />
+        return <AnimalList {...props} />
       }} />
       <Route path="/animals/:animalId(\d+)" render={(props) => {
         // Pass the animalId to the AnimalDetailComponent
         return <AnimalDetail animalId={parseInt(props.match.params.animalId)}{...props}/>
       }} />
-
+      <Route path="/animals/new" render={(props) => {
+        return <AnimalForm {...props} />
+      }} />
       {/*
         This is a new route to handle a URL with the following pattern:
         http://localhost:3000/animals/1
@@ -53,11 +58,15 @@ const ApplicationViews = () => {
           return <LocationDetail locationId={parseInt(props.match.params.locationId)}{...props}/>
         }} />
       <Route
+        exact
         path="/employees"
         render={props => {
-          return <EmployeeList />;
+          return <EmployeeList {...props} />;
         }}
       />
+      <Route path="/employees/new" render={(props) => {
+        return <EmployeeForm {...props} />
+      }} />
       <Route
         path="/Owners"
         render={props => {

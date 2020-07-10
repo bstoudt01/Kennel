@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {firstLetterCase} from '../../modules/helpers'
 import "./Animal.css"
 //2nd component created (owner, employee, location componentes also created in this step)
 // now those get called in navbar and and rendered in applicationview
@@ -14,7 +15,8 @@ const AnimalCard = (props) => {
           <img src={require(`${props.animal.photo}`)} alt="My Dog" />
         </picture>
         <h3>Name: <span className="card-petname">
-          {props.animal.name}
+        {firstLetterCase(props.animal.name)}
+
         </span></h3>
         <p>Breed: {props.animal.breed}</p>
         <Link to={`/animals/${props.animal.id}`}>
