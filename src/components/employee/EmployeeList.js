@@ -13,7 +13,10 @@ const EmployeeList = () => {
     });
   };
 
-
+  const fireEmployee = id => {
+    EmployeeManager.delete(id)
+      .then(() => EmployeeManager.getAll().then(setEmployees));
+  };
 
 //useEffect takes the first render from getEmployees function (which it invokes) is the effect Callback paramater
     //@param effect — Imperative function that can return a cleanup function
@@ -24,9 +27,10 @@ const EmployeeList = () => {
     getEmployees();
   }, []);
 
+
   return (
     <div className="container-cards">
-      {employees.map(employee => <EmployeeCard key={employee.id} employee={employee}/>)};
+      {employees.map(employee => <EmployeeCard key={employee.id} employee={employee} fireEmployee={fireEmployee}/>)};
     </div>
   )
 

@@ -22,6 +22,10 @@ const LocationList = () => {
     });
   };
 
+  const closeLocation = id => {
+   LocationManager.delete(id)
+    .then(() => LocationManager.getAll().then(setLocations));
+  };
   // got the locations from the API on the component's first render
   useEffect(() => {
       console.log("useEffect")
@@ -31,7 +35,7 @@ const LocationList = () => {
   // Finally we use map() to "loop over" the locations array to show a list of locations cards
   return (
     <div className="container-cards">
-      {Locations.map(location => <LocationCard key={location.id} location={location}/>)}
+      {Locations.map(location => <LocationCard key={location.id} location={location} closeLocation={closeLocation}/>)}
     </div>
   );
 };
