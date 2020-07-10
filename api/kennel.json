@@ -1,6 +1,22 @@
 {
   "animals": [
     {
+      "id": 1,
+      "name": "Cojo",
+      "breed": "Zombie",
+      "photo": "./Esme.jpg",
+      "employeeId": "5",
+      "ownerId": "3"
+    },
+    {
+      "id": 2,
+      "name": "Yogi",
+      "breed": "!dog",
+      "photo": "./Esme.jpg",
+      "employeeId": "2",
+      "ownerId": "2"
+    },
+    {
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
