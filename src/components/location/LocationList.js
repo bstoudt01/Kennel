@@ -9,7 +9,7 @@ import React, { useState, useEffect } from 'react';
 import LocationCard from './LocationCard';
 import LocationManager from '../../modules/LocationManager';
 
-const LocationList = () => {
+const LocationList = (props) => {
   // The initial state is an empty array
   const [Locations, setLocations] = useState([]);
 
@@ -34,9 +34,14 @@ const LocationList = () => {
 
   // Finally we use map() to "loop over" the locations array to show a list of locations cards
   return (
-    <div className="container-cards">
-      {Locations.map(location => <LocationCard key={location.id} location={location} closeLocation={closeLocation}/>)}
-    </div>
+    <>
+    <section className="section-content">
+      <button type="button" className="btn" onClick={() =>{props.history.push("/locations/new")}}>New Location</button>
+    </section>
+      <div className="container-cards">
+        {Locations.map(location => <LocationCard key={location.id} location={location} closeLocation={closeLocation}/>)}
+      </div>
+    </>
   );
 };
 export default LocationList

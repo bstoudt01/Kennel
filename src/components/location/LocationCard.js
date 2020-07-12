@@ -13,7 +13,7 @@ const LocationCard = (props) => {
         <address>
             Visit Us at our {props.location.name} Location
             <br />
-            500 Puppy Way, 
+            {props.location.address} 
         </address>
         </h3>
         <Link to={`/locations/${props.location.id}`}>

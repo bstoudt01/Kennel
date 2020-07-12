@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import EmployeeManager from '../../modules/EmployeeManager';
-import './EmployeeForm.css'
+import './EmployeeForm.css';
 
 const EmployeeForm = props => {
   const [employee, setEmployee] = useState({ name: "", role: "" });
@@ -28,33 +28,33 @@ const EmployeeForm = props => {
 
   return (
     <>
-      <form>
+       <form>
         <fieldset>
-          <div className="formgrid">
-            <input
-              type="text"
-              required
-              onChange={handleFieldChange}
-              id="name"
-              placeholder="Employee Name"
-            />
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              required
-              onChange={handleFieldChange}
-              id="role"
-              placeholder="Role"
-            />
-            <label htmlFor="role">Role</label>
-          </div>
-          <div className="alignRight">
-            <button
-              type="button"
-              disabled={isLoading}
-              onClick={constructNewEmployee}
-            >Submit</button>
-          </div>
+            <div className="formgrid">
+                <input
+                type="text"
+                required
+                onChange={handleFieldChange}
+                id="name"
+                placeholder="Employee Name"
+                />
+                <label htmlFor="name">Name</label>
+                <input
+                type="text"
+                required
+                onChange={handleFieldChange}
+                id="role"
+                placeholder="Role"
+                />
+                <label htmlFor="role">Role</label>
+            </div>
+            <div className="alignRight">
+                <button
+                type="button"
+                disabled={isLoading}
+                onClick={constructNewEmployee}
+                >Submit</button>
+            </div>
         </fieldset>
       </form>
     </>

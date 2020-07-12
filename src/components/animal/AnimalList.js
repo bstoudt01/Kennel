@@ -18,6 +18,12 @@ const AnimalList = (props) => {
     });
   };
 
+  //the 2nd .then (after delete(id) ) does the same thing as the above .then when getAnimals returns
+  const deleteAnimal = id => {
+    AnimalManager.delete(id)
+      .then(() => AnimalManager.getAll().then(setAnimals));
+  };
+
   // got the animals from the API on the component's first render
   //The function parameter is where you place the code that interacts with an external resource. "getAnimals()"
   //The empty array argument tells React to call the function on the first render of the component. "[]"
@@ -25,11 +31,6 @@ const AnimalList = (props) => {
       console.log("useEffect")
     getAnimals();
   }, []);
-//this 2nd .then (after delete(id) ) does the same thing as the above .then when getAnimals returns
-  const deleteAnimal = id => {
-    AnimalManager.delete(id)
-      .then(() => AnimalManager.getAll().then(setAnimals));
-  };
   // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
     //add this button above your display of animal cards

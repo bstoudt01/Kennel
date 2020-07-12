@@ -6,8 +6,8 @@ import { Link } from "react-router-dom"
 const EmployeeCard = (props) => {
   return (
     <div className="card">
-      <div className="card-content">
-          <div>
+        <div className="card-content">
+            <div>
                 <picture>
                     <img src={require("./brett.jpg")} alt="Employee" id="brettPhoto"/>
                 </picture>
@@ -18,10 +18,10 @@ const EmployeeCard = (props) => {
                 <small>{props.employee.role}</small>
             </h3>
             <Link to={`/employees/${props.employee.id}`}>
-              <button>Details</button>
+            <button>Details</button>
             </Link>
             <button type="button" onClick={() => props.fireEmployee(props.employee.id)}>FIRE!</button>
-      </div>
+        </div>
     </div>
   );
 };

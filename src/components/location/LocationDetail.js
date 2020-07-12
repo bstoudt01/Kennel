@@ -3,7 +3,7 @@ import LocationManager from '../../modules/LocationManager';
 import './LocationDetail.css'
 
 const LocationDetail = props => {
-  const [location, setLocation] = useState({ name: "", photo: ""});
+  const [location, setLocation] = useState({ name: "", photo: "", address: ""});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -12,7 +12,8 @@ const LocationDetail = props => {
       .then(location => {
         setLocation({
           name: location.name,
-          photo: location.photo
+          photo: location.photo,
+          address: location.address
         });
         setIsLoading(false);
       });
@@ -31,10 +32,13 @@ const LocationDetail = props => {
       <div className="card-content">
       {(location.photo !== "") && 
         <picture>
-          <img src={require(`${location.photo}`)} alt="Employee" id="locationPhoto"/>
+          <img src={require(`${location.photo}`)} alt="location" id="locationPhoto"/>
         </picture>
       }
         <h3>Name: <span style={{ color: 'darkslategrey' }}>{location.name}</span></h3>
+        <address>
+            Visit Us at: {location.address} 
+        </address>
         <button type="button" disabled={isLoading} onClick={handleDelete}>
           Close
         </button>
