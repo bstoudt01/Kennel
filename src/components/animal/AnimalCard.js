@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import { Link } from "react-router-dom";
 import {firstLetterCase} from '../../modules/helpers'
 import "./Animal.css"
@@ -22,6 +22,10 @@ const AnimalCard = (props) => {
         <Link to={`/animals/${props.animal.id}`}>
           <button>Details</button>
         </Link>
+        <button type="button"
+          onClick={() => props.history.push(`/animals/${props.animal.id}/edit`)}>
+          Edit
+        </button>
         <button type="button" onClick={() => props.deleteAnimal(props.animal.id)}>Discharge</button>
       </div>
     </div>

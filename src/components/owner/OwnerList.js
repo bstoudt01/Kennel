@@ -37,7 +37,7 @@ const OwnerList = (props) => {
         </button>
       </section>
       <div className="container-cards">
-        {owners.map(owner => <OwnerCard key={owner.id} owner={owner} removeOwner={removeOwner}/>)}
+        {owners.map(owner => <OwnerCard key={owner.id} owner={owner} removeOwner={removeOwner} {...props}/>)}
       </div>
     </>
   );

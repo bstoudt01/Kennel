@@ -3,7 +3,7 @@ import LocationManager from '../../modules/LocationManager';
 import './LocationDetail.css'
 
 const LocationDetail = props => {
-  const [location, setLocation] = useState({ name: "", photo: "", address: ""});
+  const [location, setLocation] = useState({ name: "", address: "", photo: ""});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -12,8 +12,8 @@ const LocationDetail = props => {
       .then(location => {
         setLocation({
           name: location.name,
-          photo: location.photo,
-          address: location.address
+          address: location.address,
+          photo: location.photo
         });
         setIsLoading(false);
       });
