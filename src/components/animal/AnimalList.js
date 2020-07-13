@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import AnimalCard from './AnimalCard';
 import AnimalManager from '../../modules/AnimalManager';
 
-const AnimalList = () => {
+const AnimalList = (props) => {
     console.log("getAnimal")
   // The initial state is an empty array
   const [animals, setAnimals] = useState([]);
@@ -18,6 +18,12 @@ const AnimalList = () => {
     });
   };
 
+  //the 2nd .then (after delete(id) ) does the same thing as the above .then when getAnimals returns
+  const deleteAnimal = id => {
+    AnimalManager.delete(id)
+      .then(() => AnimalManager.getAll().then(setAnimals));
+  };
+
   // got the animals from the API on the component's first render
   //The function parameter is where you place the code that interacts with an external resource. "getAnimals()"
   //The empty array argument tells React to call the function on the first render of the component. "[]"
@@ -25,16 +31,21 @@ const AnimalList = () => {
       console.log("useEffect")
     getAnimals();
   }, []);
-//this 2nd .then (after delete(id) ) does the same thing as the above .then when getAnimals returns
-  const deleteAnimal = id => {
-    AnimalManager.delete(id)
-      .then(() => AnimalManager.getAll().then(setAnimals));
-  };
   // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
-    <div className="container-cards">
-      {animals.map(animal => <AnimalCard key={animal.id} animal={animal} deleteAnimal={deleteAnimal}/>)}
-    </div>
+    //add this button above your display of animal cards
+    <>
+      <section className="section-content">
+        <button type="button"
+          className="btn"
+          onClick={() => {props.history.push("/animals/new")}}>
+          Admit Animal
+        </button>
+      </section>
+      <div className="container-cards">
+        {animals.map(animal => <AnimalCard key={animal.id} animal={animal} deleteAnimal={deleteAnimal}/>)}
+      </div>
+    </>
   );
 };
 export default AnimalList

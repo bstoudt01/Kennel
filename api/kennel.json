@@ -1,20 +1,39 @@
 {
   "animals": [
     {
+      "id": 1,
+      "name": "Cojo",
+      "breed": "Zombie",
+      "photo": "./Esme.jpg",
+      "employeeId": "5"
+    },
+    {
+      "id": 2,
+      "name": "yogi",
+      "breed": "!dog",
+      "photo": "./RCDC.jpg",
+      "employeeId": "2"
+    },
+    {
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
-      "photo": "./Esme.jpg",
-      "employeeId": "1",
-      "ownerId": "2"
+      "photo": "./businessDog.jpg",
+      "employeeId": "1"
     },
     {
       "id": 4,
       "name": "Yoda",
       "breed": "Yorkie / Shitzu",
-      "photo": "./Esme.jpg",
+      "photo": "./Yoda.jpg",
+      "employeeId": "4"
+    },
+    {
+      "name": "Doug",
+      "breed": "TheGreatEST DOG",
+      "photo": "./Yoda.jpg",
       "employeeId": "4",
-      "ownerId": "1"
+      "id": 5
     }
   ],
   "employees": [
@@ -42,6 +61,11 @@
       "id": 5,
       "name": "Ashley",
       "role": "Psychiatrist"
+    },
+    {
+      "name": "dog",
+      "role": "bounty hunter",
+      "id": 6
     }
   ],
   "locations": [
