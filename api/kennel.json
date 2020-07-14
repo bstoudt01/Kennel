@@ -5,34 +5,34 @@
       "name": "Cojo",
       "breed": "Zombie",
       "photo": "./Esme.jpg",
-      "employeeId": "5"
+      "employeeId": 1
     },
     {
       "id": 2,
       "name": "yogi",
       "breed": "!dog",
       "photo": "./RCDC.jpg",
-      "employeeId": "2"
+      "employeeId": 4
     },
     {
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
-      "photo": "./businessDog.jpg",
-      "employeeId": "1"
+      "photo": "./devDog.jpg",
+      "employeeId": 1
     },
     {
       "id": 4,
       "name": "Yoda",
       "breed": "Yorkie / Shitzu",
       "photo": "./Yoda.jpg",
-      "employeeId": "4"
+      "employeeId": 2
     },
     {
       "name": "Doug",
       "breed": "TheGreatEST DOG",
       "photo": "./Yoda.jpg",
-      "employeeId": "4",
+      "employeeId": 4,
       "id": 5
     }
   ],
@@ -40,7 +40,8 @@
     {
       "id": 1,
       "name": "Brett",
-      "role": "Veterinarian"
+      "role": "Veterinarian",
+      "locationId": 1
     },
     {
       "id": 2,
@@ -50,33 +51,45 @@
     {
       "id": 3,
       "name": "Jose",
-      "role": "Backup Poop Picker Upper / Blunt Man"
+      "role": "Backup Poop Picker Upper / Blunt Man",
+      "locationId": 1
     },
     {
       "id": 4,
-      "name": "Michale",
-      "role": "Dog Whisperer"
+      "name": "Michael",
+      "role": "Dog Whisperer",
+      "locationId": 1
     },
     {
       "id": 5,
       "name": "Ashley",
-      "role": "Psychiatrist"
+      "role": "Psychiatrist",
+      "locationId": 2
     },
     {
       "name": "dog",
       "role": "bounty hunter",
-      "id": 6
+      "id": 6,
+      "locationId": 2
+    },
+    {
+      "name": "BERT",
+      "role": "The Dude",
+      "id": 7,
+      "locationId": 1
     }
   ],
   "locations": [
     {
       "id": 1,
       "name": "Franklin",
+      "address": "500 Puppy Way, Franklin, TN 37371",
       "photo": "./Franklin.jpg"
     },
     {
       "id": 2,
-      "name": "Dowtown Nashville",
+      "name": "Dowtown Nashville what!",
+      "address": "1 Big Dog Ave, Nashville, TN 37322",
       "photo": "./Downtown.jpg"
     }
   ],

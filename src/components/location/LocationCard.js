@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Location.css";
 
 const LocationCard = (props) => {
@@ -7,6 +6,7 @@ const LocationCard = (props) => {
     <div className="card">
       <div className="card-content">
         <picture>
+        {/* does not require a placeholder oconditional because its being populated from an array thats already created (using .map), its not pulling a fresh requrest */}
           <img src={require(`${props.locations.photo}`)} alt="location" id="locationPhoto"/>
         </picture>  
         <h3>
@@ -16,9 +16,10 @@ const LocationCard = (props) => {
             {props.locations.address} 
         </address>
         </h3>
-        <Link to={`/locations/${props.locations.id}`}>
-          <button>Details</button>
-        </Link>
+        <button type="button"
+                onClick={() => { props.history.push(`/locations/${props.locations.id}/details`) }}>
+                Details
+            </button>
         <button type="button"
           onClick={() => props.history.push(`/locations/${props.locations.id}/edit`)}>
           Edit
