@@ -35,6 +35,18 @@ export default {
       },
       body: JSON.stringify(editedAnimal)
     }).then(data => data.json());
+},
+// returns id property of randomAnimal
+getRandomId() {
+  return fetch(`${remoteURL}/animals`)
+    .then(result => result.json())
+    .then(animals => {
+      // random function, many ways out there to get random
+      const randomIndex = Math.floor(Math.random() * animals.length);
+      //look at the id of the reuturning animals, and assign to randomAnimal and return the id of that animal 
+      const randomAnimal = animals[randomIndex];
+      return randomAnimal.id;
+  });
 }
 
 }

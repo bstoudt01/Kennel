@@ -13,6 +13,7 @@ import EmployeeList from "./employee/EmployeeList";
 import EmployeeDetail from "./employee/EmployeeDetail";
 import EmployeeForm from "./employee/EmployeeForm";
 import EmployeeEditForm from "./employee/EmployeeEditForm";
+import EmployeeWithAnimals from "./employee/EmployeeWithAnimals";
 import OwnerList from "./owner/OwnerList";
 import OwnerDetail from "./owner/OwnerDetail";
 import OwnerForm from "./owner/OwnerForm";
@@ -45,6 +46,7 @@ const ApplicationViews = () => {
 				 
 			// Pass the animalId to the AnimalDetailComponent
 			// without exact it would try to render both the edit form and details card
+			//props in this case comes from the html passes along a the animalId that needs to be converted / parsed to an integer
 				return <AnimalDetail animalId={parseInt(props.match.params.animalId)}{...props}/>
 			}} />
 
@@ -141,6 +143,10 @@ const ApplicationViews = () => {
 				} else {
 					return <Redirect to="/login" />
 				}
+			}} />
+			{/* detials of employee that include animals they are assigned to */}
+			<Route path="/employees/:employeeId(\d+)/details" render={(props) => {
+    			return <EmployeeWithAnimals {...props} />
 			}} />
 			
 			<Route

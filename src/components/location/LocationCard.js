@@ -7,6 +7,7 @@ const LocationCard = (props) => {
     <div className="card">
       <div className="card-content">
         <picture>
+        {/* does not require a placeholder oconditional because its being populated from an array thats already created (using .map), its not pulling a fresh requrest */}
           <img src={require(`${props.locations.photo}`)} alt="location" id="locationPhoto"/>
         </picture>  
         <h3>
