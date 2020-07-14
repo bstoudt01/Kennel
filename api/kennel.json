@@ -5,34 +5,34 @@
       "name": "Cojo",
       "breed": "Zombie",
       "photo": "./Esme.jpg",
-      "employeeId": "5"
+      "employeeId": 1
     },
     {
       "id": 2,
       "name": "yogi",
       "breed": "!dog",
       "photo": "./RCDC.jpg",
-      "employeeId": "2"
+      "employeeId": 4
     },
     {
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
-      "photo": "./businessDog.jpg",
-      "employeeId": "1"
+      "photo": "./devDog.jpg",
+      "employeeId": 1
     },
     {
       "id": 4,
       "name": "Yoda",
       "breed": "Yorkie / Shitzu",
       "photo": "./Yoda.jpg",
-      "employeeId": "4"
+      "employeeId": 2
     },
     {
       "name": "Doug",
       "breed": "TheGreatEST DOG",
       "photo": "./Yoda.jpg",
-      "employeeId": "4",
+      "employeeId": 4,
       "id": 5
     }
   ],
@@ -54,7 +54,7 @@
     },
     {
       "id": 4,
-      "name": "Michale",
+      "name": "Michael",
       "role": "Dog Whisperer"
     },
     {
@@ -66,17 +66,24 @@
       "name": "dog",
       "role": "bounty hunter",
       "id": 6
+    },
+    {
+      "name": "BERT",
+      "role": "The Dude",
+      "id": 7
     }
   ],
   "locations": [
     {
       "id": 1,
       "name": "Franklin",
+      "address": "500 Puppy Way, Franklin, TN 37371",
       "photo": "./Franklin.jpg"
     },
     {
       "id": 2,
-      "name": "Dowtown Nashville",
+      "name": "Dowtown Nashville what!",
+      "address": "1 Big Dog Ave, Nashville, TN 37322",
       "photo": "./Downtown.jpg"
     }
   ],
