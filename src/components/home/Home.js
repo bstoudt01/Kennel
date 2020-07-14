@@ -4,7 +4,7 @@ import AnimalManager from "../../modules/AnimalManager";
 // call animal manager to get any fresh data
 
 const Home = () => {
-  //STEP 1. defines use state and then creates function refeshspotlightAnimal, but function does not run b.c it is not invoked yet,
+  //STEP 1. defines useState (with property 0) and defines a function refeshspotlightAnimal, but function does not run b.c it is not invoked yet,
     //our database will never have an id of 0, this inital value is false just like having it empty to start with, it will render when true and it changes. 
   const [spotlightId, setSpotlightId] = useState(0);
   const refreshSpotlightAnimal = () => {
@@ -13,9 +13,9 @@ const Home = () => {
     AnimalManager.getRandomId().then(setSpotlightId);
   };
   //created but not run on first render
-  //STEP 3. useEffect runs and (this time says) calls the function
+  //STEP 3. useEffect runs and (for this example it) calls the function
   useEffect(() => {
-    //STEP 3A. this function returns a new animal id which inturns changes setstate and calls the dom to be re-renderd
+    //STEP 3A. this function returns a new "random" animal id .... .then changes setstate of setSpotlightId, which calls the dom to be re-renderd (which indlues spotlightId as an object to be passed to <AnimalSpotlight />
     refreshSpotlightAnimal();
   }, []);
   //STEP 2. return runs on first render (before useEffect).. 
@@ -34,7 +34,7 @@ const Home = () => {
         // && as a conditional, 
         //STEP 2A. spotlightId is 0 in the inital useState and does not run b.c its false (0 is not in our database)
         //STEP 4A. if spotlightid is true it shows <AnimalSpotlight />.. and passes the current spotlightId in as the value of a paramater animalId (see AnimalSpilight.js for rendering of spotlight) 
-        //spotlightIds like if im here (true), and then do this... if im
+        //spotlightIds like if im here (true), and then do this... if im im not here (false) then stop this {js function}
         //&& always evaluates expression (true)
         //in javascript true && expression always evaluates to expression, and false && expression always evaluates to false.
         spotlightId && <AnimalSpotlight animalId={spotlightId} />
