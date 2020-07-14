@@ -40,7 +40,8 @@
     {
       "id": 1,
       "name": "Brett",
-      "role": "Veterinarian"
+      "role": "Veterinarian",
+      "locationId": 1
     },
     {
       "id": 2,
@@ -50,27 +51,32 @@
     {
       "id": 3,
       "name": "Jose",
-      "role": "Backup Poop Picker Upper / Blunt Man"
+      "role": "Backup Poop Picker Upper / Blunt Man",
+      "locationId": 1
     },
     {
       "id": 4,
       "name": "Michael",
-      "role": "Dog Whisperer"
+      "role": "Dog Whisperer",
+      "locationId": 1
     },
     {
       "id": 5,
       "name": "Ashley",
-      "role": "Psychiatrist"
+      "role": "Psychiatrist",
+      "locationId": 2
     },
     {
       "name": "dog",
       "role": "bounty hunter",
-      "id": 6
+      "id": 6,
+      "locationId": 2
     },
     {
       "name": "BERT",
       "role": "The Dude",
-      "id": 7
+      "id": 7,
+      "locationId": 1
     }
   ],
   "locations": [
