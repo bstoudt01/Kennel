@@ -11,7 +11,7 @@ import LocationManager from '../../modules/LocationManager';
 
 const LocationList = (props) => {
   // The initial state is an empty array
-  const [Locations, setLocations] = useState([]);
+  const [locations, setLocations] = useState([]);
 
   const getLocations = () => {
     console.log("Locations List")
@@ -39,7 +39,7 @@ const LocationList = (props) => {
       <button type="button" className="btn" onClick={() =>{props.history.push("/locations/new")}}>New Location</button>
     </section>
       <div className="container-cards">
-        {Locations.map(location => <LocationCard key={location.id} location={location} closeLocation={closeLocation}/>)}
+        {locations.map(location => <LocationCard key={location.id} locations={location} closeLocation={closeLocation} {...props}/>)}
       </div>
     </>
   );

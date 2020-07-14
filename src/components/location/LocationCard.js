@@ -7,19 +7,23 @@ const LocationCard = (props) => {
     <div className="card">
       <div className="card-content">
         <picture>
-          <img src={require(`${props.location.photo}`)} alt="Employee" id="locationPhoto"/>
+          <img src={require(`${props.locations.photo}`)} alt="location" id="locationPhoto"/>
         </picture>  
         <h3>
         <address>
-            Visit Us at our {props.location.name} Location
+            Visit Us at our {props.locations.name} Location
             <br />
-            {props.location.address} 
+            {props.locations.address} 
         </address>
         </h3>
-        <Link to={`/locations/${props.location.id}`}>
+        <Link to={`/locations/${props.locations.id}`}>
           <button>Details</button>
         </Link>
-        <button type="button" onClick={() => props.closeLocation(props.location.id)}>CLOSE</button>
+        <button type="button"
+          onClick={() => props.history.push(`/locations/${props.locations.id}/edit`)}>
+          Edit
+        </button>
+        <button type="button" onClick={() => props.closeLocation(props.locations.id)}>CLOSE</button>
       </div>
     </div>
   );
