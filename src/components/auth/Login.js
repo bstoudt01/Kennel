@@ -17,16 +17,9 @@ const Login = props => {
   const handleLogin = (e) => {
       // prevent default, keeps the page from refreshing and loosing credentials entered
     e.preventDefault();
-    /*
-        For now, just store the email and password that
-        the customer enters into session storage.
-        ...Let's just trust the user... That's a good idea, right????
-        crededeintails (our props are used)
-    */
-    sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-    );
+    
+    //removed the sesionStorage b.c we grab that in the parent, and pass it along using setUser and invoke it with the credentials
+    props.setUser(credentials);
     props.history.push("/");
   }
 

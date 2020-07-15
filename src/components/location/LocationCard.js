@@ -16,15 +16,21 @@ const LocationCard = (props) => {
             {props.locations.address} 
         </address>
         </h3>
+        {props.hasUser ?
         <button type="button"
                 onClick={() => { props.history.push(`/locations/${props.locations.id}/details`) }}>
                 Details
-            </button>
+            </button> : null}
+
+        {props.hasUser ?    
         <button type="button"
           onClick={() => props.history.push(`/locations/${props.locations.id}/edit`)}>
           Edit
-        </button>
+        </button> : null}
+        
+        {props.hasUser ?
         <button type="button" onClick={() => props.closeLocation(props.locations.id)}>CLOSE</button>
+        : null }
       </div>
     </div>
   );
