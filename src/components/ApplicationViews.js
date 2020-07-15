@@ -27,16 +27,32 @@ import Login from "./auth/Login";
 
 // render pass in props
 // component pass in function
-const ApplicationViews = () => {
-	// Check if credentials are in session storage returns true/false (credentials are there or its not)
-	const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+const ApplicationViews = (props) => {
+	// Check if credentials are in session storage returns true/false (credentials are there or its not) based on the props. hasUser & setUser from Application Views (parent component)
+	const hasUser = props.hasUser;
+	const setUser = props.setUser;
+	
 	return (
 		<React.Fragment>
+
+			{/* pass the `setUser` function was Login component (no properties), but now we want to pass in props it needs to be render (something other than component) */}
+				{/* Remember to update the handleLogin() function in the <Login> component to use the setUser() function. */}
+				<Route path="/login" render={props => {
+    				return <Login setUser={setUser} {...props} />
+  				}} />
+			
+			<Route
+				exact
+				path="/"
+				render={props => {
+					return <Home />;
+				}}
+			/>
 			{/* Make sure you add the `exact` attribute here  and pass through ...props so animal list can accept a paramater of props to use later in the code (for adding a new animal) */}
 			
 			
 			<Route exact path="/animals" render={props => {
-				if (isAuthenticated()) {
+				if (hasUser) {
 					return <AnimalList {...props} />
 				} else {
 					return <Redirect to="/login" />
@@ -57,7 +73,7 @@ const ApplicationViews = () => {
 
 			{/* colon ":" lets route know its a dynamic path and (\d+) lets it know to only look at integer of id passed in */}
 			<Route path="/animals/:animalId(\d+)/edit" render={props => {
-			if (isAuthenticated()) {
+			if (hasUser) {
 				return <AnimalEditForm {...props} />
 			} else {
 				return <Redirect to="/login" />
@@ -72,25 +88,14 @@ const ApplicationViews = () => {
 			matches only numbers after the final slash in the URL
 			http://localhost:3000/animals/jack
 			*/}
-			<Route path="/login" component={Login} />
 
-			<Route
-				exact
-				path="/"
-				render={props => {
-					return <Home />;
-				}}
-			/>
+			
 
 			<Route
 				exact
 				path="/locations"
 				render={(props) => {
-					if (isAuthenticated()) {
-					return <LocationList {...props} />
-				} else {
-					return <Redirect to="/login" />
-				}
+					return <LocationList {...props} hasUser={hasUser} />
 				}}
 			/>
 			<Route
@@ -104,7 +109,7 @@ const ApplicationViews = () => {
 			/>
 
 			<Route path="/locations/:locationId(\d+)/edit" render={(props) => {
-				if (isAuthenticated()) {
+				if (hasUser) {
 					return <LocationEditForm {...props} />
 				} else {
 					return <Redirect to="/login" />
@@ -125,7 +130,7 @@ const ApplicationViews = () => {
 				exact
 				path="/employees"
 				render={(props) => {
-					if (isAuthenticated()) {
+					if (hasUser) {
 					return <EmployeeList {...props} />
 				} else {
 					return <Redirect to="/login" />
@@ -144,7 +149,7 @@ const ApplicationViews = () => {
 			}} />
 			
 			<Route path="/employees/:employeeId(\d+)/edit" render={props => {
-				if (isAuthenticated()) {
+				if (hasUser) {
 					return <EmployeeEditForm {...props} />
 				} else {
 					return <Redirect to="/login" />
@@ -159,7 +164,7 @@ const ApplicationViews = () => {
 				exact
 				path="/owners"
 				render={(props) => {
-					if (isAuthenticated()) {
+					if (hasUser) {
 					return <OwnerList {...props} />
 				} else {
 					return <Redirect to="/login" />
@@ -176,7 +181,7 @@ const ApplicationViews = () => {
 			}}/>
 			
 			<Route path="/owners/:ownerId(\d+)/edit" render={props => {
-			if (isAuthenticated()) {
+			if (hasUser) {
 				return <OwnerEditForm {...props} />
 			} else {
 				return <Redirect to="/login" />

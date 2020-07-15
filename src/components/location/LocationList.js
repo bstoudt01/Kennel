@@ -35,9 +35,11 @@ const LocationList = (props) => {
   // Finally we use map() to "loop over" the locations array to show a list of locations cards
   return (
     <>
+    {props.hasUser ?
     <section className="section-content">
       <button type="button" className="btn" onClick={() =>{props.history.push("/locations/new")}}>New Location</button>
-    </section>
+    </section>:null}
+    
       <div className="container-cards">
         {locations.map(location => <LocationCard key={location.id} locations={location} closeLocation={closeLocation} {...props}/>)}
       </div>
